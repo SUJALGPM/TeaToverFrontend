@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Card, CardBody, CardTitle, CardText } from 'reactstrap';
+import { Card, CardBody, CardTitle, CardText, Button } from 'reactstrap';
 import Sidebar from '../../components/Sidebar';
+import { FaPlus } from 'react-icons/fa';
 import { useNavigate } from 'react-router';
 
 const Year = () => {
@@ -32,11 +33,23 @@ const Year = () => {
         navigate(`/mgr-month/${yearObjId}/${yearName}`);
     }
 
+    //Handle the new year create..
+    const handleNewYear = () => {
+        navigate('/mgr-newYear');
+    }
 
     return (
         <div>
             <Sidebar>
                 <h3>Year Page</h3>
+
+                {/* Button To create New Yearr */}
+                <Button color='info' style={{ marginLeft: "200px", marginBottom: "10px", border: "1px solid black", marginRight: "5px" }} onClick={handleNewYear}>
+                    <FaPlus style={{ marginRight: "5px" }} />
+                    NewYear
+                </Button>
+
+                {/* YearWise Card  */}
                 {yearData.map(year => (
                     <Card key={year.yearObjId} style={{ marginLeft: '10px', marginRight: '10px', marginBottom: "10px", width: "310px", height: "200px" }} onClick={() => handleYearId(year.yearObjId, year.yearName)}>
                         <CardBody>

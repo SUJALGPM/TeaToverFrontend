@@ -1,13 +1,16 @@
 import React, { useState } from 'react';
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 import Sidebar from '../../components/Sidebar';
-import { useParams } from 'react-router-dom';
-import { Divider } from 'antd';
+import { useNavigate, useParams } from 'react-router-dom';
+import { Divider, message } from 'antd';
 
 const Entry = () => {
 
     //Handle the Manager IDs...
     const managerId = '65e3fba71170cbf53a35ea0a';
+
+    //Render after working...
+    const navigate = useNavigate();
 
     //Fetch the detail from params...
     const { yearName, monthName } = useParams();
@@ -31,9 +34,33 @@ const Entry = () => {
     }
 
     // Handle the Entry Post api.....
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log("Form submitted", formData);
+
+        try {
+            const response = await fetch(`https://teatover-backend.onrender.com/api/mgr/manager-record-entry/${managerId}/${yearName}/${monthName}`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    TeaVendorName: formData.TeaVendorName,
+                    chaiTotalSold: formData.ChaiToldSold,
+                    chaiPerPrice: formData.ChaiPerPrice,
+                    coffeeTotalSold: formData.CoffeeToldSold,
+                    coffeePerPrice: formData.CoffeePerPrice
+                })
+            });
+
+            if (response.ok === true) {
+                message.success("New Entry Recorded Successfully..");
+                navigate('/mgr-year');
+            } else {
+                message.error("Failed to record the Entry...!!!");
+            }
+        } catch (err) {
+            console.log(err);
+        }
     }
 
     // Generate options for dropdown from 1 to 20

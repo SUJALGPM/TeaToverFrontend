@@ -6,6 +6,7 @@
 }
 .containery{
     display:flex;
+    height: 100vh;
 }
 .main{
     width: 100%;
@@ -97,4 +98,13 @@
     padding: 20px;
     margin-bottom: 100px;
     background-color: rgba(223, 233, 255, 1);
+}
+
+.Year-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 330px;
+    background-image: url('./assets/entryback1.jpg');
 }

@@ -1,4 +1,4 @@
-    import React, { useState } from 'react';
+import React, { useState } from 'react';
 import { FaTh, FaBars, FaUserAlt, FaRegChartBar, FaCommentAlt, FaShoppingBag, FaThList } from "react-icons/fa";
 import { NavLink } from 'react-router-dom';
 
@@ -43,8 +43,8 @@ const Sidebar = ({ children }) => {
             icon: <FaShoppingBag />
         },
         {
-            path: "/mgr-newbook",
-            name: "NewBook",
+            path: "/mgr-yearList",
+            name: "NewMonth",
             icon: <FaThList />
         },
         {
