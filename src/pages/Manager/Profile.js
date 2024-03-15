@@ -3,11 +3,11 @@ import Sidebar from '../../components/Sidebar';
 
 const Profile = () => {
     return (
-        <div>
-            <Sidebar>
+        <Sidebar>
+            <div>
                 <h2>Profile Page..</h2>
-            </Sidebar>
-        </div>
+            </div>
+        </Sidebar>
     )
 }
 

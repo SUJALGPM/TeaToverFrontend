@@ -36,8 +36,8 @@ const Month = () => {
 
 
     return (
-        <div>
-            <Sidebar>
+        <Sidebar>
+            <div>
                 <h3>Month Page</h3>
                 {monthDetail.map(month => (
                     <Card key={month.monthObjId} style={{ marginLeft: '10px', marginRight: '10px', marginBottom: "10px", width: "310px", height: "200px" }} onClick={() => handleMonthId(month.monthObjId, month.monthName)}>
@@ -49,8 +49,8 @@ const Month = () => {
                         </CardBody>
                     </Card>
                 ))}
-            </Sidebar>
-        </div>
+            </div>
+        </Sidebar>
     )
 }
 

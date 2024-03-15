@@ -10,6 +10,7 @@ import Login from "./pages/Manager/Login.js";
 import NewYearForm from "./pages/Manager/NewYearForm.js";
 import YearList from "./pages/Manager/YearList.js";
 import NewMonthName from "./pages/Manager/NewMonthForm.js";
+import Expenses from './pages/Manager/Expenses.js';
 
 const App = () => {
   return (
@@ -23,6 +24,7 @@ const App = () => {
       <Route path="/mgr-yearList" element={<YearList />} />
       <Route path="/mgr-newYear" element={<NewYearForm />} />
       <Route path="/mgr-createMonth/:mgrId/:yearName" element={<NewMonthName />} />
+      <Route path="/mgr-expenses-report" element={<Expenses />} />
     </Routes>
   );
 };

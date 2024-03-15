@@ -87,7 +87,7 @@ const Entry = () => {
                                     <tr>
                                         <td>Chai</td>
                                         <td><Input type="text" name="ChaiToldSold" id="ChaiToldSold" placeholder="Enter Total Sold" value={formData.ChaiToldSold} onChange={handleChange} /></td>
-                                        <td style={{ paddingLeft: "3px" }}>
+                                        <td style={{}}>
                                             <Input type="select" name="ChaiPerPrice" id="ChaiPerPrice" value={formData.ChaiPerPrice} onChange={handleChange}>
                                                 {[...Array(20)].map((_, index) => (
                                                     <option key={index} value={index + 1}>{index + 1}</option>
@@ -98,7 +98,7 @@ const Entry = () => {
                                     <tr>
                                         <td style={{ paddingTop: "5px" }} >Coffee</td>
                                         <td style={{ paddingTop: "5px" }}><Input type="text" name="CoffeeToldSold" id="CoffeeToldSold" placeholder="Enter Total Sold" value={formData.CoffeeToldSold} onChange={handleChange} /></td>
-                                        <td style={{ paddingLeft: "3px", paddingTop: "5px" }}>
+                                        <td style={{ paddingTop: "5px" }}>
                                             <Input type="select" name="CoffeePerPrice" id="CoffeePerPrice" value={formData.CoffeePerPrice} onChange={handleChange}>
                                                 {[...Array(20)].map((_, index) => (
                                                     <option key={index} value={index + 1}>{index + 1}</option>

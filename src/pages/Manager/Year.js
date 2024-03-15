@@ -39,8 +39,8 @@ const Year = () => {
     }
 
     return (
-        <div>
-            <Sidebar>
+        <Sidebar>
+            <div>
                 <h3>Year Page</h3>
 
                 {/* Button To create New Yearr */}
@@ -49,20 +49,21 @@ const Year = () => {
                     NewYear
                 </Button>
 
-                {/* YearWise Card  */}
-                {yearData.map(year => (
-                    <Card key={year.yearObjId} style={{ marginLeft: '10px', marginRight: '10px', marginBottom: "10px", width: "310px", height: "200px" }} onClick={() => handleYearId(year.yearObjId, year.yearName)}>
-                        <CardBody>
-                            <CardTitle className='text-center'>YearName :{year.yearName}</CardTitle>
-                            <CardText>TotalMonth :{year.totalMonth}</CardText>
-                            <CardText>TotalService :{year.totalDays}</CardText>
-                            <CardText>TotalInvoice :{year.totalInvoice}</CardText>
-                            <CardText>TotalTeaVendors :{year.totalTeaVendors}</CardText>
-                        </CardBody>
-                    </Card>
-                ))}
-            </Sidebar>
-        </div>
+                <div className='yearCard'>
+                    {yearData.map(year => (
+                        <Card key={year.yearObjId} style={{ marginLeft: '10px', marginRight: '10px', marginBottom: "10px", width: "310px", height: "200px" }} onClick={() => handleYearId(year.yearObjId, year.yearName)}>
+                            <CardBody>
+                                <CardTitle className='text-center'>YearName :{year.yearName}</CardTitle>
+                                <CardText>TotalMonth :{year.totalMonth}</CardText>
+                                <CardText>TotalService :{year.totalDays}</CardText>
+                                <CardText>TotalInvoice :{year.totalInvoice}</CardText>
+                                <CardText>TotalTeaVendors :{year.totalTeaVendors}</CardText>
+                            </CardBody>
+                        </Card>
+                    ))}
+                </div>
+            </div>
+        </Sidebar>
     )
 }
 

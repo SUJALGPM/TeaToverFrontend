@@ -48,7 +48,7 @@ const Sidebar = ({ children }) => {
             icon: <FaThList />
         },
         {
-            path: "/mgr-expenses",
+            path: "/mgr-expenses-report",
             name: "Expenses",
             icon: <FaThList />
         }
